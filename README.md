@@ -11,6 +11,7 @@ spécifiques pour chaque SGBD, tout en gérant la configuration via un fichier d
 un .jar exécutable. Des tests automatisés assurent la fiabilité du comportement de l’API sur chaque système cible.
 
 ## Structure du projet
+```
 src/
 ├── main/
 │   ├── java/
@@ -32,6 +33,8 @@ src/
 │   │   └── UtilisateurTest.java
 │   └── resources/
 │       └── utilisateurs.csv
+```
+
 
 ## Fonctionnalités
 - Interface `DatabaseManager` générique pour abstraction de la couche SGBD.
