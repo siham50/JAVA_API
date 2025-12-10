@@ -13,25 +13,25 @@ un .jar exécutable. Des tests automatisés assurent la fiabilité du comporteme
 ## Structure du projet
 src/
 ├── main/
-│ ├── java/
-│ │ └── ma/ensa/
-│ │ ├── db/
-│ │ │ ├── DatabaseManager.java
-│ │ │ ├── MySQLManager.java
-│ │ │ ├── OracleManager.java
-│ │ │ ├── PostgreSQLManager.java
-│ │ │ ├── SQLServerManager.java
-│ │ ├── util/
-│ │ │ └── DBConfigLoader.java
-│ │ └── Main.java
-│ └── resources/
-│ └── db.properties
+│   ├── java/
+│   │   └── ma/ensa/
+│   │       ├── db/
+│   │       │   ├── DatabaseManager.java
+│   │       │   ├── MySQLManager.java
+│   │       │   ├── OracleManager.java
+│   │       │   ├── PostgreSQLManager.java
+│   │       │   ├── SQLServerManager.java
+│   │       ├── util/
+│   │       │   └── DBConfigLoader.java
+│   │       └── Main.java
+│   └── resources/
+│       └── db.properties
 ├── test/
-│ ├── java/ma/ensa/db/
-│ │ ├── ManagerTest.java
-│ │ └── UtilisateurTest.java
-│ └── resources/
-│ └── utilisateurs.csv
+│   ├── java/ma/ensa/db/
+│   │   ├── ManagerTest.java
+│   │   └── UtilisateurTest.java
+│   └── resources/
+│       └── utilisateurs.csv
 
 ## Fonctionnalités
 - Interface `DatabaseManager` générique pour abstraction de la couche SGBD.
