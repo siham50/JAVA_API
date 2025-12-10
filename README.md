@@ -151,6 +151,7 @@ Placer le fichier ojdbc11.jar (téléchargé depuis le site Oracle) dans un rép
 
 
 ### Remarques
+```
 Le .jar n’exécute que Main.java, pas les tests JUnit.
 
 Les tests (ManagerTest, UtilisateurTest) ne s’exécutent que via Maven.
@@ -159,11 +160,13 @@ db.properties dans le .jar doit avoir un db.type explicite (mysql, oracle, etc.)
 
 Pour les tests flexibles, on peut utiliser soit db.type=${dbType} ou un db.type explicite (mysql, oracle, etc.) 
 dans le src/main/resources.
+```
 
 
 
 
 ### Prérequis
+```
 Avant d'exécuter ce projet, assurez-vous d'avoir :
 -Java JDK 17 installé
 -Apache Maven 3.6+ installé
@@ -176,3 +179,4 @@ Oracle Database Express Edition (XE)
 -Drivers JDBC fonctionnels (inclus dans le projet sauf Oracle)
 -Pilote Oracle installé manuellement (ojdbc11.jar) si Oracle est utilisé
 -IDE Java (ex: IntelliJ IDEA, Eclipse) ou terminal avec Maven configuré
+```
