@@ -37,6 +37,7 @@ src/
 
 
 ## Fonctionnalités
+```
 - Interface `DatabaseManager` générique pour abstraction de la couche SGBD.
 - Implémentations concrètes pour :
     - `MySQLManager`
@@ -50,44 +51,28 @@ src/
 - Utilisation de Lombok (`@Getter`) pour simplifier la classe de config.
 - **Tests automatisés via `ManagerTest` (CRUD)** et **tests paramétrés via `UtilisateurTest` (CSV)**.
 - Création d’un `.jar` exécutable avec toutes les dépendances.
-
-
-
-##  Configuration du fichier `db.properties`
-Exemple :
-db.type=mysql
-
-mysql.url=jdbc:mysql://localhost:3306/mysqltest
-mysql.username=root
-mysql.password=
-
-postgresql.url=jdbc:postgresql://localhost:5432/postgreTest
-postgresql.username=postgres
-postgresql.password=
-
-sqlserver.url=jdbc:sqlserver://localhost:1433;databaseName=sqlserverTest;encrypt=false
-sqlserver.username=sa
-sqlserver.password=
-
-oracle.url=jdbc:oracle:thin:@//localhost:1521/XEPDB1
-oracle.username=baseTest
-oracle.password=
+```
 
 
 ### Génération du fichier .jar avec la commande
+```
 mvn clean compile assembly:single
 Cela produit ce fichier:
 target/api_tp9-1.0-SNAPSHOT-jar-with-dependencies.jar
+```
 
 
 ### Exécution de l’API.jar (exécution de main dans la classe principale (ma.ensa.Main) définie dans le pom.xml)
+```
 java -jar target/api_tp9-1.0-SNAPSHOT-jar-with-dependencies.jar
 ---> execution que  des requêtes dans main et non pas celles dans ManagerTest et UtilisateursTest
 Le fichier db.properties à l'intérieur du .jar doit obligatoirement contenir :db.type=mysql (ou postgresql, oracle, sqlserver)
 Cette valeur est à modifier manuellement avant chaque test du .jar.
+```
 
 
 ### Lancer les tests
+```
 1. Changer manuellement db.type dans src/main/resources/db.properties :
    mvn test
 
@@ -103,10 +88,11 @@ mvn test -Dtest=UtilisateurTest -DdbType=mysql
 
 ----> après lancement des tests on peut exécuter aussi main mais manuellement(les requêtes 
 qui y sont inclus ne s'exécutent pas lors des tests, que celles dans ManagerTest et UtilisateursTest qui s'executent!)
-
+```
 
 
 ### Tests inclus
+```
 -ManagerTest.java:
 Test de la connexion
 Requêtes INSERT, SELECT, UPDATE, DELETE
@@ -124,9 +110,10 @@ Siham,30,40000,F,siham@example.com
 User2,28,35000,M,user2@example.com
 User3,32,42000,F,user3@example.com
 ...
+```
 
 ### Dépendances Maven
-
+```
 Dépendance:	                              Version:	          Utilisation:
 mysql-connector-java	                  8.0.33	          JDBC MySQL
 postgresql	                              42.6.0	          JDBC PostgreSQL
@@ -134,8 +121,10 @@ ojdbc11	                                  21.5.0.0	          JDBC Oracle
 mssql-jdbc	                              12.4.1.jre11	      JDBC SQL Server
 lombok	                                  1.18.30	          Réduction du code (getters...)
 junit-jupiter	                          5.9.2	              Tests unitaires
+```
 
 #### Installation manuelle du pilote Oracle
+```
 Le pilote Oracle (ojdbc11) n’est pas disponible directement sur Maven Central. Il doit être installé manuellement :
 
 mvn install:install-file \
@@ -146,7 +135,7 @@ mvn install:install-file \
 -Dpackaging=jar
 
 Placer le fichier ojdbc11.jar (téléchargé depuis le site Oracle) dans un répertoire accessible.
-
+```
 
 
 
